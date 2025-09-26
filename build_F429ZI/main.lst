@@ -1,0 +1,93 @@
+ARM GAS  C:\Users\Home\AppData\Local\Temp\cc4zMISc.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/main.c"
+  20              		.section	.text.main,"ax",%progbits
+  21              		.align	1
+  22              		.global	main
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	main:
+  28              	.LFB0:
+   1:Core/Src/main.c **** #include <stdint.h>
+   2:Core/Src/main.c **** #include "../Inc/Init.h"
+   3:Core/Src/main.c **** 
+   4:Core/Src/main.c **** int main(void)
+   5:Core/Src/main.c **** {
+  29              		.loc 1 5 1 view -0
+  30              		.cfi_startproc
+  31              		@ Volatile: function does not return.
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34 0000 08B5     		push	{r3, lr}
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 3, -8
+  38              		.cfi_offset 14, -4
+  39              	.L2:
+   6:Core/Src/main.c **** void GPIO_Init_With_Myself_Macros();
+  40              		.loc 1 6 1 view .LVU1
+   7:Core/Src/main.c ****     
+   8:Core/Src/main.c ****    
+   9:Core/Src/main.c ****     while (1)
+  41              		.loc 1 9 5 view .LVU2
+  10:Core/Src/main.c ****     {
+  11:Core/Src/main.c ****         if(BIT_READ(GPIOC_IDR, gpio_pin_13)) {
+  42              		.loc 1 11 9 view .LVU3
+  43              	.LBB2:
+  44              		.loc 1 11 12 is_stmt 0 view .LVU4
+  45 0002 4FF40051 		mov	r1, #8192
+  46 0006 034B     		ldr	r3, .L4
+  47 0008 D3F81004 		ldr	r0, [r3, #1040]
+ARM GAS  C:\Users\Home\AppData\Local\Temp\cc4zMISc.s 			page 2
+
+
+  48 000c FFF7FEFF 		bl	BIT_READ
+  49              	.LVL0:
+  12:Core/Src/main.c ****             BIT_SET(GPIOB_BSRP, GPIO_PIN_SET_7); 
+  13:Core/Src/main.c ****         } 
+  14:Core/Src/main.c ****         else {
+  15:Core/Src/main.c ****             BIT_SET(GPIOB_BSRP, GPIO_PIN_RESET_7);
+  50              		.loc 1 15 13 is_stmt 1 view .LVU5
+  51 0010 F7E7     		b	.L2
+  52              	.L5:
+  53 0012 00BF     		.align	2
+  54              	.L4:
+  55 0014 00000240 		.word	1073872896
+  56              	.LBE2:
+  57              		.cfi_endproc
+  58              	.LFE0:
+  60              		.text
+  61              	.Letext0:
+  62              		.file 2 "C:/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1/arm-none-eabi/include/machine/_default_types.
+  63              		.file 3 "C:/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1/arm-none-eabi/include/sys/_stdint.h"
+ARM GAS  C:\Users\Home\AppData\Local\Temp\cc4zMISc.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\Home\AppData\Local\Temp\cc4zMISc.s:21     .text.main:00000000 $t
+C:\Users\Home\AppData\Local\Temp\cc4zMISc.s:27     .text.main:00000000 main
+C:\Users\Home\AppData\Local\Temp\cc4zMISc.s:55     .text.main:00000014 $d
+
+UNDEFINED SYMBOLS
+BIT_READ

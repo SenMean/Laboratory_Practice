@@ -30,7 +30,7 @@ OPT = -Og
 ifeq ($(TARGET), STM32F103C8Tx)
 	BUILD_DIR = build_F103C8Tx
 else ifeq ($(TARGET), STM32F103x6)
-	BUILD_DIR = build_F103x6
+	BUILD_DIR = Build
 else ifeq ($(TARGET), STM32F407VET)
 	BUILD_DIR = build_F407VET
 else ifeq ($(TARGET), STM32F411VET)
@@ -94,7 +94,7 @@ else ifeq ($(TARGET), STM32F429ZI)
 	ASM = STMDevices/STM32F429ZI/startup_stm32f429xx.s
 	CMSIS_INC_DEV = CMSIS/Devices/STM32F4xx/Inc
 	CMSIS_INC_UNIT = CMSIS/Devices/STM32F4xx/Inc/STM32F429ZI
-	CMSIS_INC = CMSIS/Include
+	CMSIS_INC = CMSIS/Include 
 	LD = STMDevices/STM32F429ZI/STM32F429ZITx_FLASH.ld
 	DEF = STM32F429xx
 	MCPU = cortex-m4
@@ -120,7 +120,7 @@ endif
 C_SOURCES =  \
 $(SYS) \
 Core/Src/main.c \
-
+Core/Src/Init.c \
 # ASM sources
 ASM_SOURCES =  \
 $(ASM)
@@ -240,13 +240,13 @@ $(BUILD_DIR)/$(TARGET).elf: $(OBJECTS) Makefile
 	@echo "-----------------------------------------------------"	
 
 $(BUILD_DIR):
-	@"mkdir" -p $@
+	@mkdir -p $@
 
 #######################################
 # clean up
 #######################################
 clean:
-	@"rm" -fR $(BUILD_DIR)
+	@rm -fR $(BUILD_DIR)
   
 #######################################
 # openocd
