@@ -12,17 +12,17 @@
 #define GPIOB_OSPEEDR *(uint32_t *)(0x40020400UL + 0x08UL)
 #define GPIOB_BSRP  *(uint32_t *)(0x40020400UL + 0x18UL)
 
-#define GPIOC_IDR     *(uint32_t *)(0x40020400UL + 0x10UL)
+#define GPIOC_IDR     *(uint32_t *)(0x40020800UL + 0x10UL)
 
 #define GPIO_PIN_OUT_7 0x4000UL
 #define GPIO_OFF 0x00UL
 #define GPIO_PIN_Med_7 0x4000UL
 #define  GPIO_PIN_RESET_7 0x800000UL
 #define GPIO_PIN_SET_7 0x80UL
-#define gpio_pin_13 0X2000ul
+#define gpio_pin_13 0X2000UL
 
 #define BIT_SET(REG, BIT) ((REG) |= (BIT))
-#define BIT_SET(REG, BIT) ((REG) & (BIT))
+#define BIT_READ(REG, BIT) ((REG) & (BIT))
 
 void GPIO_Init_Memory(void);
 void GPIO_Init_With_Myself_Macros(void);
